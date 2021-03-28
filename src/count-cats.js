@@ -1,3 +1,13 @@
 const CustomError = require("../extensions/custom-error");
 
-module.exports = countCats = (matrix) => matrix.reduce((acc, arr) => arr.find(el => el === "^^") === "^^" ? acc + 1 : acc, 0);
+module.exports = counstCats = (matrix) => {
+  let result = 0;
+  for (let arr of matrix) {
+    for (let char of arr) {
+      if (char === "^^") {
+        result += 1;
+      }
+    }
+  }
+  return result;
+}
